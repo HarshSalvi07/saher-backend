@@ -2,6 +2,7 @@ import express from "express"
 import dotenv from "dotenv"
 import cookieParser from "cookie-parser"
 import uploadRouter from "./upload/upload.routes";
+import path from "node:path";
 
 // Env Config
 dotenv.config()
@@ -12,6 +13,7 @@ const port = process.env.PORT || 4000;
 // Middlewares
 app.use(express.json())
 app.use(cookieParser())
+app.use(express.static(path.join(process.cwd(), "public")))
 
 // Routes
 app.use("/api/upload", uploadRouter)

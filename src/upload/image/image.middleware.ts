@@ -25,3 +25,5 @@ const fileFilter: multer.Options["fileFilter"] = (req: Request, file, cb) => {
   // If All The Check Is Done
   cb(null, true)
 }
+
+export const uploadImage = multer({ storage, fileFilter, limits: { fileSize: 5 * 1024 * 1024, }, })
