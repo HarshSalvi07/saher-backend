@@ -1,0 +1,8 @@
+# openapi/components.yaml
+schemas:
+  ErrorResponse:
+    type: object
+    properties:
+      message:
+        type: string
+
