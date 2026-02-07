@@ -1,0 +1,25 @@
+
+post:
+  security: 
+    - refreshCookie : []
+  tags: [Auth]
+  summary: Revalidate Token
+  operationId: revalidateToken
+  responses:
+    "200":
+      description: User Login Successfully
+      headers:
+        Set-Cookie:
+          description: saher_access_token & saher_refresh_token cookies
+          schema:
+            type: string
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/auth/login-response.yaml
+    "404":
+      description: Token Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/common/error-response.yaml

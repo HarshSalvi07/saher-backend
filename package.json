@@ -9,6 +9,7 @@
       "start": "node dist/index.js",
       "docs:lint": "redocly lint ",
       "docs:build": "npx redocly build-docs openapi/openapi.yaml -o docs/index.html"   ,
+      "docs:dev" : " pnpm docs:build && pnpm dev",
       "typecheck": "tsc --noEmit",
       "clean": "rm -rf dist",
       "prod": "pnpm clean && pnpm docs:lint && pnpm build && pnpm start"

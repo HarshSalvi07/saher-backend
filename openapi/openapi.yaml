@@ -25,6 +25,12 @@ paths:
   # Auth
   /auth/login:
     $ref: ./paths/auth/login.yaml
+  /auth/logout:
+    $ref: ./paths/auth/logout.yaml
+  /auth/revalidate-token:
+    $ref: ./paths/auth/revalidate-token.yaml
+  /auth/me:
+    $ref: ./paths/auth/me.yaml
 
 
 components:

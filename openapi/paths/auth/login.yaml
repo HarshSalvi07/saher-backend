@@ -23,4 +23,14 @@ post:
             $ref: ../../components/auth/login-response.yaml
     "401":
       description: Invalid credentials
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/common/error-response.yaml
+    "404":
+      description: User Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/common/error-response.yaml
 

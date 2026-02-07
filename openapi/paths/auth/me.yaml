@@ -1,0 +1,20 @@
+
+get:
+  tags: [Auth]
+  summary: User Details
+  operationId: getCurrentUser
+  responses:
+    "200":
+      description: Get Current User Details
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/auth/me-response.yaml 
+    "401":
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/common/error-response.yaml
+
+

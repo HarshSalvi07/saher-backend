@@ -1,0 +1,23 @@
+type: object
+properties:
+  _id:
+    type: string
+  name:
+    type: string
+  displayName:
+    type: string
+  email:
+    type: string
+  image:
+    type: string
+  role:
+    type: string
+  emailVerified:
+    type: boolean
+    default: true
+  isActive:
+    type: boolean
+    default: true
+  isBanned:
+    type: boolean
+    default: false
