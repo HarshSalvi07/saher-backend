@@ -7,21 +7,36 @@ info:
   license:
     name: MIT
 
+tags:
+  - name: User
+    description: User Management Operation
+  - name: Admin
+    description: Admin Management Operation
+  - name: Auth
+    description: Auth Management Operation
+
 servers:
   - url: http://localhost:4000/api
     description: Local
+  - url: https://api.saher.org/api
+    description: Production
 
-paths:
-  $ref: "./paths.yaml"
+paths: 
+  # Auth
+  /auth/login:
+    $ref: ./paths/auth/login.yaml
+
 
 components:
-  $ref: "./components.yaml"
   securitySchemes:
-    cookieAuth:
+    accessCookie:
       type: apiKey
       in: cookie
-      name: access_token
+      name: saher_access_token
+    refreshCookie:
+      type: apiKey
+      in: cookie
+      name: saher_refresh_token
 
 security:
-  - cookieAuth: []
-
+  - accessCookie: []

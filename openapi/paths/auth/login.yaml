@@ -1,0 +1,26 @@
+post:
+  security: []
+  tags: [Auth]
+  summary: User login
+  operationId: loginUser
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../components/auth/login-request.yaml
+  responses:
+    "200":
+      description: User Login Successfully
+      headers:
+        Set-Cookie:
+          description: saher_access_token & saher_refresh_token cookies
+          schema:
+            type: string
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/auth/login-response.yaml
+    "401":
+      description: Invalid credentials
+
