@@ -45,8 +45,7 @@ export const updateBankDetailController = async (req: Request, res: Response) =>
     const updated = await BankDetail.findByIdAndUpdate(id, data)
 
     if (!updated) {
-      return res.status(200).json({ success: false, message: "Bank Details Not Exisear
-    ", data: null })
+      return res.status(200).json({ success: false, message: "Bank Details Not Exist", data: null })
     }
 
     return res.status(200).json({ success: true, message: "Bank Details Updated Successffully", data: updated })
