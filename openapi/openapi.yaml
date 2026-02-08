@@ -14,6 +14,10 @@ tags:
     description: Admin Management Operation
   - name: Auth
     description: Auth Management Operation
+  - name: Bank
+    description: Bank Management Operation
+  - name: Upload
+    description: Upload Management Operation
 
 servers:
   - url: http://localhost:4000/api
@@ -22,6 +26,10 @@ servers:
     description: Production
 
 paths: 
+  #Upload
+  /upload/image:
+    $ref: ./paths/upload/image-upload.yaml
+
   # Auth
   /auth/login:
     $ref: ./paths/auth/login.yaml
@@ -32,6 +40,16 @@ paths:
   /auth/me:
     $ref: ./paths/auth/me.yaml
 
+  # Admin
+  # Bank Operation
+  /admin/bank/register:
+    $ref: ./paths/admin/bank/register.yaml
+  /admin/bank/get/{id}:
+    $ref: ./paths/admin/bank/get.yaml
+  /admin/bank/update/{id}:
+    $ref: ./paths/admin/bank/update.yaml
+  /admin/bank/delete/{id}:
+    $ref: ./paths/admin/bank/delete.yaml
 
 components:
   securitySchemes:

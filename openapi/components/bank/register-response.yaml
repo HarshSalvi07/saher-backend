@@ -1,0 +1,23 @@
+type: object
+properties:
+  success:
+    type: boolean
+    example: true
+  data: 
+    type: object
+    properties:
+      _id:
+        type: string
+        example: 6973921db4db65fabb186797
+      accountHolderName:
+        type: string
+        example: John Doe
+      bankName:
+        type: string
+        example: Acme Bank
+      ifcs:
+        type: string
+        example: abcd1234abcd 
+      mobileNumber:
+        type: string
+        example: 90XXXXXX54

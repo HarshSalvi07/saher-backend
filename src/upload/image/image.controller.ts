@@ -28,6 +28,7 @@ export const uploadImageController = async (req: Request, res: Response) => {
     }
 
     const response = {
+      success:true,
       message: "Image Upload Successfully",
       file: {
         id: dbImage._id,
@@ -40,7 +41,7 @@ export const uploadImageController = async (req: Request, res: Response) => {
       }
     }
 
-    return res.status(201).json({ response })
+    return res.status(201).json(response)
   }
   catch (error: unknown) {
     if (error instanceof Error) {

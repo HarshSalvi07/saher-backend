@@ -1,0 +1,30 @@
+get:
+  tags: [Admin,Bank]
+  summary: Get Bank Details
+  operationId: getBankAccount
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      description: Bank Details Retrive Successfully
+      content:
+        application/json:
+          schema:
+            $ref: ../../../components/bank/register-response.yaml
+    "404":
+      description: Bank Details Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ../../../components/common/error-response.yaml
+    "500":
+      description: Internal Server Error 
+      content:
+        application/json:
+          schema:
+            $ref: ../../../components/common/error-response.yaml
+

@@ -33,4 +33,7 @@ post:
         application/json:
           schema:
             $ref: ../../components/common/error-response.yaml
+    "500": 
+      $ref: ../../components/common/internal-server-error.yaml
+
 
