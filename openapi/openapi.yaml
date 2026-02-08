@@ -31,6 +31,7 @@ paths:
   #Upload
   /upload/image:
     $ref: ./paths/upload/image-upload.yaml
+  # --------------------------------------------------------------------- # 
 
   # Auth
   /auth/login:
@@ -41,6 +42,8 @@ paths:
     $ref: ./paths/auth/revalidate-token.yaml
   /auth/me:
     $ref: ./paths/auth/me.yaml
+
+  # --------------------------------------------------------------------- # 
 
   # Admin
   # Bank Operation
@@ -70,6 +73,27 @@ paths:
     $ref: ./paths/user/update.yaml
   /user/delete/{id}:
     $ref: ./paths/user/delete.yaml
+
+  # --------------------------------------------------------------------- # 
+
+  # Attendance
+    # Mark
+  /attendance/check-in:
+    $ref: ../openapi/paths/attendance/check-in.yaml
+  /attendance/check-out:
+    $ref: ../openapi/paths/attendance/check-out.yaml
+
+    # Holiday
+  /attendance/holiday/create:
+    $ref: ../openapi/paths/attendance/holiday/create.yaml
+  /attendance/holiday/update/{id}:
+    $ref: ../openapi/paths/attendance/holiday/update.yaml
+  /attendance/holiday/get-all:
+    $ref: ../openapi/paths/attendance/holiday/get-all.yaml
+  /attendance/holiday/get/{id}:
+    $ref: ../openapi/paths/attendance/holiday/get.yaml
+  /attendance/holiday/delete/{id}:
+    $ref: ../openapi/paths/attendance/holiday/delete.yaml
 
 components:
   securitySchemes:

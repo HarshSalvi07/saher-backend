@@ -1,0 +1,19 @@
+type: object
+properties:
+  success:
+    type: boolean
+    example: true
+  data: 
+    type: object
+    properties:
+      date:
+        type: string
+        format: date
+        example: 2025-12-25
+      title:
+        type: string
+        example: Christmas
+      type:
+        type: string
+        enum: ["national","organization","optional","other"]
+        example: national
