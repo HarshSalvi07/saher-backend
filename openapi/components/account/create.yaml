@@ -1,0 +1,55 @@
+type: object
+properties:
+  user:
+    type: string
+  employeeId:
+    type: string
+  gender:
+    type: string
+    enum: [male, female, other]
+  dateOfBirth:
+    type: string
+    format: date
+  dateOfJoining:
+    type: string
+    format: date
+  employeeType:
+    type: string
+    enum: [full-time, part-time, intern, contract]
+  phoneNumber:
+    type: string
+  secondaryPhoneNumber:
+    type: string
+  address:
+    type: string
+  department:
+    type: string
+  designation:
+    type: string
+  salaryStructure:
+    type: string
+  bankDetail:
+    type: string
+  aadhar:
+    type: string
+  pan:
+    type: string
+  resume:
+    type: string
+required:
+  - user
+  - gender
+  - dateOfBirth
+  - dateOfJoining
+  - employeeType
+  - phoneNumber
+  - department
+  - designation
+  - salaryStructure
+  - bankDetail
+  - aadhar
+  - pan
+  - resume
+  - employeeId
+  - address
+

@@ -18,6 +18,8 @@ tags:
     description: Bank Management Operation
   - name: Upload
     description: Upload Management Operation
+  - name: Account
+    description: Account Management Operation
 
 servers:
   - url: http://localhost:4000/api
@@ -50,6 +52,24 @@ paths:
     $ref: ./paths/admin/bank/update.yaml
   /admin/bank/delete/{id}:
     $ref: ./paths/admin/bank/delete.yaml
+
+  # Account Operation
+  /admin/account/register:
+    $ref: ./paths/admin/account/register.yaml
+  /admin/account/get/{id}:
+    $ref: ./paths/admin/account/get.yaml
+  /admin/account/update/{id}:
+    $ref: ./paths/admin/account/update.yaml
+  /admin/account/delete/{id}:
+    $ref: ./paths/admin/account/delete.yaml
+
+  # User Operation
+  /user/get/{id}:
+    $ref: ./paths/user/get.yaml
+  /user/update/{id}:
+    $ref: ./paths/user/update.yaml
+  /user/delete/{id}:
+    $ref: ./paths/user/delete.yaml
 
 components:
   securitySchemes:

@@ -1,0 +1,43 @@
+post:
+  tags: [Admin, Account]
+  summary: Register Account Details
+  operationId: registerAccount
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            success: 
+              type: boolean
+            account:
+              $ref: ../../../components/account/create.yaml
+            user:
+              $ref: ../../../components/user/create.yaml
+  responses:
+    "200":
+      description:  Account Added Successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success: 
+                type: boolean
+              account:
+                $ref: ../../../components/account/response.yaml
+              user:
+                $ref: ../../../components/user/response.yaml
+    "400":
+      description: Invalid Details
+      content:
+        application/json:
+          schema:
+            $ref: ../../../components/common/error-response.yaml
+    "500":
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../../components/common/error-response.yaml

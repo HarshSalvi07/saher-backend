@@ -1,0 +1,41 @@
+put:
+  tags: [Admin,Account]
+  summary: Update Account Details
+  operationId: updateAccount
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: ../../../components/account/update.yaml
+  responses:
+    "200":
+      description: Account Details Update Successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success: 
+                type: boolean
+              account:
+                $ref: ../../../components/account/response.yaml
+    "400":
+      description: Invalid Details
+      content:
+        application/json:
+          schema:
+            $ref: ../../../components/common/error-response.yaml
+    "500":
+      description: Internal Server Error 
+      content:
+        application/json:
+          schema:
+            $ref: ../../../components/common/error-response.yaml
+

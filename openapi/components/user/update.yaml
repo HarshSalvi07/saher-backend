@@ -1,0 +1,11 @@
+type: object
+properties:
+  name:
+    type: string
+  displayName:
+    type: string
+  image:
+    type: string
+    description: File ID
+  isActive:
+    type: boolean
