@@ -1,4 +1,4 @@
-put:
+post:
   tags: [Attendance]
   summary: Check Out
   operationId: checkOut

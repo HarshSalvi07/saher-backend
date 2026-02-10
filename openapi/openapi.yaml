@@ -79,21 +79,27 @@ paths:
   # Attendance
     # Mark
   /attendance/check-in:
-    $ref: ../openapi/paths/attendance/check-in.yaml
+    $ref: ./paths/attendance/check-in.yaml
   /attendance/check-out:
-    $ref: ../openapi/paths/attendance/check-out.yaml
+    $ref: ./paths/attendance/check-out.yaml
+  /attendance/correction:
+    $ref: ./paths/attendance/correction/create.yaml
+  /attendance/correction/{id}:
+    $ref: ./paths/attendance/correction/update.yaml
 
     # Holiday
   /attendance/holiday/create:
-    $ref: ../openapi/paths/attendance/holiday/create.yaml
+    $ref: ./paths/attendance/holiday/create.yaml
   /attendance/holiday/update/{id}:
-    $ref: ../openapi/paths/attendance/holiday/update.yaml
+    $ref: ./paths/attendance/holiday/update.yaml
   /attendance/holiday/get-all:
-    $ref: ../openapi/paths/attendance/holiday/get-all.yaml
+    $ref: ./paths/attendance/holiday/get-all.yaml
   /attendance/holiday/get/{id}:
-    $ref: ../openapi/paths/attendance/holiday/get.yaml
+    $ref: ./paths/attendance/holiday/get.yaml
   /attendance/holiday/delete/{id}:
-    $ref: ../openapi/paths/attendance/holiday/delete.yaml
+    $ref: ./paths/attendance/holiday/delete.yaml
+
+    # Export Report
 
 components:
   securitySchemes:
