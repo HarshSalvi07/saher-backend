@@ -31,6 +31,7 @@ paths:
   #Upload
   /upload/image:
     $ref: ./paths/upload/image-upload.yaml
+  # --------------------------------------------------------------------- # 
 
   # Auth
   /auth/login:
@@ -41,6 +42,8 @@ paths:
     $ref: ./paths/auth/revalidate-token.yaml
   /auth/me:
     $ref: ./paths/auth/me.yaml
+
+  # --------------------------------------------------------------------- # 
 
   # Admin
   # Bank Operation
@@ -70,6 +73,33 @@ paths:
     $ref: ./paths/user/update.yaml
   /user/delete/{id}:
     $ref: ./paths/user/delete.yaml
+
+  # --------------------------------------------------------------------- # 
+
+  # Attendance
+    # Mark
+  /attendance/check-in:
+    $ref: ./paths/attendance/check-in.yaml
+  /attendance/check-out:
+    $ref: ./paths/attendance/check-out.yaml
+  /attendance/correction:
+    $ref: ./paths/attendance/correction/create.yaml
+  /attendance/correction/{id}:
+    $ref: ./paths/attendance/correction/update.yaml
+
+    # Holiday
+  /attendance/holiday/create:
+    $ref: ./paths/attendance/holiday/create.yaml
+  /attendance/holiday/update/{id}:
+    $ref: ./paths/attendance/holiday/update.yaml
+  /attendance/holiday/get-all:
+    $ref: ./paths/attendance/holiday/get-all.yaml
+  /attendance/holiday/get/{id}:
+    $ref: ./paths/attendance/holiday/get.yaml
+  /attendance/holiday/delete/{id}:
+    $ref: ./paths/attendance/holiday/delete.yaml
+
+    # Export Report
 
 components:
   securitySchemes:

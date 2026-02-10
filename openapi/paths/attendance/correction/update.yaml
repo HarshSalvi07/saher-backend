@@ -1,0 +1,59 @@
+post:
+  tags: [Attendance]
+  summary: Update Attendance Correction Details
+  operationId: updateAttendanceCorrection
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            check-in:
+              type: string
+              format: date
+            check-out:
+              type: string
+              format: date
+            status:
+              type: string
+              enum: [present,absent,late,half-day]
+            isLate:
+              type: boolean
+
+  responses:
+    "200":
+      description:  Attendance Correction Update Successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success: 
+                type: boolean
+              message: 
+                type: string
+                example: Attendance Correction Update Successfully
+              data:
+                type: object
+                properties:
+                  id: 
+                    type: string
+    "400":
+      description: Invalid Details
+      content:
+        application/json:
+          schema:
+            $ref: ../../../components/common/error-response.yaml
+    "500":
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            $ref: ../../../components/common/error-response.yaml

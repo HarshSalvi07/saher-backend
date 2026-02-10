@@ -9,8 +9,6 @@ post:
         schema:
           type: object
           properties:
-            success: 
-              type: boolean
             account:
               $ref: ../../../components/account/create.yaml
             user:
