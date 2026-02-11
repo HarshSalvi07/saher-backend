@@ -1,15 +1,31 @@
 import { Request, Response } from "express";
 import { BankDetail } from "../../database/bankDetail.model.js";
 
-export const createBankDetailController = async (req: Request, res: Response) => {
-  const { accountHolderName, bankName, ifcs, branch, mobileNumber } = req.body
+export const createBankDetailController = async (
+  req: Request,
+  res: Response,
+) => {
+  const { accountHolderName, bankName, ifcs, branch, mobileNumber } = req.body;
 
   try {
-    const details = await BankDetail.create({ accountHolderName, bankName, ifcs, branch, mobileNumber })
-    return res.status(201).json({ success:true,message: "Bank Details Added Succesfull", data: details })
-  }
-  catch (error) {
+    const details = await BankDetail.create({
+      accountHolderName,
+      bankName,
+      ifcs,
+      branch,
+      mobileNumber,
+    });
+    return res
+      .status(201)
+      .json({
+        success: true,
+        message: "Bank Details Added Succesfull",
+        data: details,
+      });
+  } catch (error) {
     console.error(error);
-    return res.status(500).json({ success:false,message: "Registration failed",data:error });
+    return res
+      .status(500)
+      .json({ success: false, message: "Registration failed", data: error });
   }
-}
+};

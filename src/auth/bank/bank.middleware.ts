@@ -1,5 +1,5 @@
-import { Response, Request, NextFunction } from "express"
-import z from "zod"
+import { Response, Request, NextFunction } from "express";
+import z from "zod";
 
 const bankRegisterSchema = z.object({
   accountHolderName: z.string(),
@@ -7,18 +7,24 @@ const bankRegisterSchema = z.object({
   ifcs: z.string(),
   branch: z.string(),
   mobileNumber: z.string(),
-})
+});
 
-export type bankRegisterType = z.infer<typeof bankRegisterSchema>
+export type bankRegisterType = z.infer<typeof bankRegisterSchema>;
 
-export const validateBankRegisterSchema = async (req: Request, res: Response, next: NextFunction) => {
-  const parsedBankRegisterInput = bankRegisterSchema.safeParse(req.body)
-
+export const validateBankRegisterSchema = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  const parsedBankRegisterInput = bankRegisterSchema.safeParse(req.body);
 
   if (!parsedBankRegisterInput.success) {
-    return res.status(400).json({ success: false, message: parsedBankRegisterInput.error.issues[0] })
+    return res.status(400).json({
+      success: false,
+      message: parsedBankRegisterInput.error.issues[0],
+    });
   }
 
-  req.body = parsedBankRegisterInput.data
-  next()
-}
+  req.body = parsedBankRegisterInput.data;
+  next();
+};
