@@ -1,0 +1,70 @@
+post:
+  tags:
+    - Upload
+  summary: Upload an image
+  operationId: uploadImage
+  requestBody:
+    required: true
+    content:
+      multipart/form-data:
+        schema:
+          type: object
+          required:
+            - image
+            - name
+          properties:
+            image:
+              type: string
+              format: binary
+              description: Image file to upload
+            name:
+              type: string
+              description: Alt text for the image
+              example: Profile picture
+  responses:
+    "200":
+      description: Image uploaded successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success:
+                type: boolean
+                example: true
+              message:
+                type: string
+                example: Image Upload Successfully
+              file:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: 6988338c67ea81cf41fb4d9f
+                  fileName:
+                    type: string
+                    example: b1e5007d-eee0-461f-a22b-445fc1544a24.webp
+                  url:
+                    type: string
+                    example: http://localhost:4000/uploads/images/b1e5007d-eee0-461f-a22b-445fc1544a24.webp
+                  size:
+                    type: integer
+                    example: 74620
+                  width:
+                    type: integer
+                    example: 1024
+                  height:
+                    type: integer
+                    example: 576
+                  mimetype:
+                    type: string
+                    example: image/webp
+    "400":
+      description: Invalid Request
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/common/error-response.yaml
+
+    "500":
+      $ref: ../../components/common/internal-server-error.yaml

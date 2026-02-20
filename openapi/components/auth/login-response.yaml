@@ -1,0 +1,7 @@
+type: object
+properties:
+  accesToken:
+    type: string
+  refreshToken:
+    type: string
+

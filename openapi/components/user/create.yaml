@@ -1,0 +1,24 @@
+type: object
+properties:
+  name:
+    type: string
+    example: John Doe
+  displayName:
+    type: string
+    example: John Doe
+  email:
+    type: string
+    format: email
+  password:
+    type: string
+    format: password
+  role:
+    type: string
+    enum: [user, admin, volunteer]
+  image:
+    type: string
+    description: Image Url
+required:
+  - name
+  - email
+

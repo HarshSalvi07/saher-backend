@@ -1,0 +1,11 @@
+type: object
+required:
+  - email
+  - password
+properties:
+  email:
+    type: string
+    example: user@gmail.com
+  password:
+    type: string
+    example: secret123

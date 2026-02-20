@@ -1,0 +1,32 @@
+type: object
+properties:
+  id:
+    type: string
+  name:
+    type: string
+  displayName:
+    type: string
+  email:
+    type: string
+    format: email
+  emailVerified:
+    type: boolean
+  role:
+    type: string
+  image:
+    type: string
+  isActive:
+    type: boolean
+  isBanned:
+    type: boolean
+  createdAt:
+    type: string
+    format: date-time
+  updatedAt:
+    type: string
+    format: date-time
+required:
+  - id
+  - name
+  - email
+  - role

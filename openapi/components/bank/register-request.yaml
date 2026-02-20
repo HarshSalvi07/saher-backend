@@ -1,0 +1,23 @@
+type: object
+required:
+  - accountHolderName
+  - bankName
+  - branch
+  - ifcs
+  - mobileNumber
+properties:
+  accountHolderName:
+    type: string
+    example: John Doe
+  bankName:
+    type: string
+    example: Acme Bank
+  branch:
+    type: string
+    example: branch
+  ifcs:
+    type: string
+    example: abcd1234abcd 
+  mobileNumber:
+    type: string
+    example: 90XXXXXX54

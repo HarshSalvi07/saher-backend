@@ -1,0 +1,35 @@
+get:
+  tags: [Admin,User]
+  summary: Get User Details
+  operationId: getUser
+  parameters:
+    - name: id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    "200":
+      description: User Details Retrive Successfully
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              success: 
+                type: boolean
+              user:
+                $ref: ../../components/user/response.yaml
+    "404":
+      description: User Details Not Found
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/common/error-response.yaml
+    "500":
+      description: Internal Server Error 
+      content:
+        application/json:
+          schema:
+            $ref: ../../components/common/error-response.yaml
+

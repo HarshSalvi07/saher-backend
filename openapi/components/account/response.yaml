@@ -1,0 +1,42 @@
+type: object
+properties:
+  id:
+    type: string
+  user:
+    $ref: ../user/response.yaml
+  employeeId:
+    type: string
+  gender:
+    type: string
+  dateOfBirth:
+    type: string
+    format: date
+  dateOfJoining:
+    type: string
+    format: date
+  employeeType:
+    type: string
+  phoneNumber:
+    type: string
+  secondaryPhoneNumber:
+    type: string
+  address:
+    type: string
+  department:
+    type: string
+  designation:
+    type: string
+  salaryStructure:
+    type: string
+  bankDetail:
+    type: string
+  aadhar:
+    type: string
+  pan:
+    type: string
+  resume:
+    type: string
+required:
+  - id
+  - user
+  - employeeId

@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx watch src/index.ts",
-    "build": "tsc",
-    "start": "node dist/index.js"
+    "scripts": {
+      "dev": "tsx watch src/index.ts",
+      "build": "pnpm docs:build && tsc",
+      "start": "node dist/index.js",
+      "docs:lint": "redocly lint ",
+      "docs:build": "npx redocly build-docs openapi/openapi.yaml -o docs/index.html"   ,
+      "docs:dev" : " pnpm docs:build && pnpm dev",
+      "typecheck": "tsc --noEmit",
+      "clean": "rm -rf dist",
+      "prod": "pnpm clean && pnpm docs:lint && pnpm build && pnpm start"
   },
   "type": "module",
   "keywords": [],
@@ -27,6 +32,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@redocly/cli": "^2.15.1",
     "@types/bcrypt": "^6.0.0",
     "@types/cookie-parser": "^1.4.10",
     "@types/express": "^5.0.6",

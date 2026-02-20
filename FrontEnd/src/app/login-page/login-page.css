@@ -1,0 +1,78 @@
+.container {
+  padding: 2.5rem;
+  text-align: center;
+  background: #f7f7f7;
+}
+html {
+  background: #f7f7f7;
+}
+.horizontal-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.head {
+  margin-top: 1rem;
+  font-size: x-large;
+  font-family: Quattrocento;
+  display: inline-flex;
+  text-shadow: 3px 1px 5px rgb(163, 163, 163) ;
+}
+.image {
+  padding: 2rem;
+  padding: 5rem;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+}
+.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.login {
+  border: 2px solid rgb(132, 207, 228);
+  box-shadow: 5px 10px 20px rgba(0, 200, 255, 0.2);
+  font-family: Quattrocento;
+  padding: 2rem;
+  background: #c4f4ff;
+  padding: 5rem;
+  align-items: center;
+  text-align: center;
+}
+
+.login p {
+  font-weight: bolder;
+}
+
+.btn {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+.lgn-btn {
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  font-family: Quattrocento;
+    font-size: large;
+
+  font-weight: bolder;
+  background: #89d8ff;
+  border-color: #89d8ff;
+}
+.reg-btn {
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+  font-family: Quattrocento;
+  font-size: large;
+  font-weight: bolder;
+  background: #89d8ff;
+  border-color: #89d8ff;
+}
+
+.reg-note{
+    color: rgb(87, 87, 87);
+    margin-top: 1rem;
+    margin-bottom: .1px;
+}

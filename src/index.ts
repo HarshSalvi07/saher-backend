@@ -2,7 +2,7 @@ import express from "express"
 import dotenv from "dotenv"
 import cookieParser from "cookie-parser"
 import uploadRouter from "./upload/upload.routes.js";
-import path from "node:path";
+import path from "path";
 import connectDb from "./database/connection.js";
 import authRouter from "./auth/auth.routes.js";
 
@@ -23,11 +23,7 @@ await connectDb()
 // Routes
 app.use("/api/upload", uploadRouter)
 app.use("/api/auth",authRouter)
-
-app.get("/", (req, res) => {
-  res.status(200).json("This Is Saher Internal Home Page")
-})
-
+app.use("/", express.static(path.join(process.cwd(), "docs")));
 
 app.listen(port, () => {
   console.log("Server Started", port)
