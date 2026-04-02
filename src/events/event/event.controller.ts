@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Program } from "./event.model.js";
+import { Program } from "../../database/event.model.js";
 
 //Add an event
 export const addProgram = async (req: Request, res: Response) => {
