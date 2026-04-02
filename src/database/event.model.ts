@@ -6,10 +6,7 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  string: {
-    type: String,
-    required: true,
-  },
+  
   title: {
     type: String,
     required: true,
@@ -32,4 +29,4 @@ const eventSchema = new mongoose.Schema({
 });
 
 export type eventType = mongoose.InferSchemaType<typeof eventSchema>;
-export const Program = mongoose.model("Event", eventSchema);
+export const Event = mongoose.model("Event", eventSchema);

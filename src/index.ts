@@ -45,7 +45,7 @@ await connectDb()
 // Routes
 app.use("/api/admin", protectedRoute, adminRouter)
 app.use("/api/upload", uploadRouter)
-app.use("/programs", eventRoutes);
+app.use("/events", eventRoutes);
 app.use("/api/attendence",protectedRoute,attendenceRouter)
 app.use("/api/admin",protectedRoute, adminRouter)
 app.use("/api/auth", authRouter)
