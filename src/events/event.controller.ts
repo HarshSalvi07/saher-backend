@@ -1,17 +1,23 @@
 import { Request, Response } from "express";
 import { Program } from "./event.model.js";
 
-let programs: Program[] = [];
-
-export const addProgram = (req:Request, res:Response) => {
-    const newProgram: Program = req.body;
-    programs.push(newProgram);
+//Add an event
+export const addProgram = async (req: Request, res: Response) => {
+  try {
+    const newProgram = await Program.create(req.body);
     res.json(newProgram);
-}
+  } catch (error) {
+    res.status(500).json({ error: "Failed to add an event" });
+  }
+};
 
-export const deleteProgram = (req:Request, res:Response) => {
+//Delete an event
+export const deleteProgram = async (req: Request, res: Response) => {
+  try {
     const id = req.params.id;
-    programs = programs.filter(p => p.id !== id);
-    res.json({message: "Event has been deleted successfully"});
-}
-export { Program };
+    await Program.findByIdAndDelete(id);
+    res.json({ message: "Event has been deleted successfully" });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to delete an event" });
+  }
+};
