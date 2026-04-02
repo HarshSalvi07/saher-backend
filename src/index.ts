@@ -9,7 +9,7 @@ import authRouter from "./auth/auth.routes.js";
 import connectDb from "./database/connection.js";
 import { protectedRoute } from "./libs/middleware/protected-route.js";
 import attendenceRouter from "./attendence/attendence.route.js"
-import programRoutes from "./event.routes.js";
+import programRoutes from "./events/event/event.routes.js";
 import uploadRouter from "./upload/upload.routes.js";
 import errorHandler from "./libs/middleware/error-handler.js";
 
