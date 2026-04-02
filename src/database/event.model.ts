@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { required } from "zod/mini";
 
-const programSchema = new mongoose.Schema({
+const eventSchema = new mongoose.Schema({
   id: {
     type: String,
     required: true,
@@ -31,5 +31,5 @@ const programSchema = new mongoose.Schema({
   },
 });
 
-export type eventType = mongoose.InferSchemaType<typeof programSchema>;
-export const Program = mongoose.model("Program", programSchema);
+export type eventType = mongoose.InferSchemaType<typeof eventSchema>;
+export const Program = mongoose.model("Event", eventSchema);

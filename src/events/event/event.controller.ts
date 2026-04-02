@@ -1,21 +1,21 @@
 import { Request, Response } from "express";
-import { Program } from "../../database/event.model.js";
+import { Event } from "../../database/event.model.js";
 
 //Add an event
-export const addProgram = async (req: Request, res: Response) => {
+export const addEvent = async (req: Request, res: Response) => {
   try {
-    const newProgram = await Program.create(req.body);
-    res.json(newProgram);
+    const newEvent = await Event.create(req.body);
+    res.json(newEvent);
   } catch (error) {
     res.status(500).json({ error: "Failed to add an event" });
   }
 };
 
 //Delete an event
-export const deleteProgram = async (req: Request, res: Response) => {
+export const deleteEvent = async (req: Request, res: Response) => {
   try {
     const id = req.params.id;
-    await Program.findByIdAndDelete(id);
+    await Event.findByIdAndDelete(id);
     res.json({ message: "Event has been deleted successfully" });
   } catch (error) {
     res.status(500).json({ error: "Failed to delete an event" });

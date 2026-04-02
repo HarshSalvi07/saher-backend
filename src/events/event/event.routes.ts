@@ -1,10 +1,10 @@
 import express from "express";
-import { addProgram, deleteProgram } from "./event.controller.js";
+import { addEvent, deleteEvent } from "./event.controller.js";
 
 const router = express.Router();
-router.post("/", addProgram);
+router.post("/", addEvent);
 router.get("/", (req, res) => {
   res.send("Programs API is working");
 });
-router.delete("/:id",deleteProgram)
+router.delete("/:id",deleteEvent)
 export default router;
